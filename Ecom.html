@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site Dynamique</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Lien vers le fichier CSS -->
+<style type="text/css" id="dcoder_stylesheet">* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar h1 {
+    font-size: 1.8em;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+section {
+    padding: 40px 20px;
+    margin: 20px 0;
+}
+
+section#about {
+    background-color: #e2e2e2;
+}
+
+section#services {
+    background-color: #fff;
+}
+
+section#contact {
+    background-color: #e2e2e2;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}</style></head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>Bienvenue sur Mon Site Dynamique</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>À propos de nous</h2>
+        <p>Ce site utilise HTML, CSS et JavaScript pour créer une expérience dynamique.</p>
+    </section>
+
+    <section id="services">
+        <h2>Nos Services</h2>
+        <ul>
+            <li>Création de sites web</li>
+            <li>Développement d'applications</li>
+            <li>Consultation en stratégie numérique</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contactez-nous</h2>
+        <p>Envoyez-nous un message pour toute question.</p>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Votre nom" required>
+            <input type="email" id="email" placeholder="Votre email" required>
+            <textarea id="message" placeholder="Votre message" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+        <p id="formResponse"></p>
+    </section>
+
+    <footer>
+        <p>© 2025 Mon Site Dynamique. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- Lien vers le fichier JavaScript -->
+
+<script type="text/javascript" id="dcoder_script">// Animation pour afficher un message de bienvenue
+document.addEventListener('DOMContentLoaded', () => {
+    const welcomeMessage = document.createElement('p');
+    welcomeMessage.textContent = 'Bienvenue sur notre site dynamique!';
+    document.body.insertBefore(welcomeMessage, document.querySelector('header'));
+    welcomeMessage.style.fontSize = '1.5em';
+    welcomeMessage.style.textAlign = 'center';
+    welcomeMessage.style.marginTop = '20px';
+    welcomeMessage.style.color = '#333';
+});
+
+// Fonction pour gérer la soumission du formulaire
+const contactForm = document.getElementById('contactForm');
+contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Collecte des données du formulaire
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    if (name && email && message) {
+        document.getElementById('formResponse').textContent = `Merci ${name}, nous avons bien reçu votre message. Nous vous répondrons sous peu.`;
+        document.getElementById('formResponse').style.color = 'green';
+    } else {
+        document.getElementById('formResponse').textContent = 'Veuillez remplir tous les champs.';
+        document.getElementById('formResponse').style.color = 'red';
+    }
+});</script></body></html>
